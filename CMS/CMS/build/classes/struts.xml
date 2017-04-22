@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC  
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="helloworld" class="com.lut.demo.Hello">
+			<result>/hello.jsp</result>
+		</action>
+		<action name="Sign" class="com.lut.action.SignAction">
+			<result name="success">/Login.jsp</result>
+			<result name="error">/WEB-INF/pages/S.jsp</result>
+		</action>
+		<action name="Login" class="com.lut.action.LoginAction">
+			<result name="role0">/WEB-INF/pages/Role0.jsp</result>
+			<result name="role1">/WEB-INF/pages/Role1.jsp</result>
+			<result name="role2">/WEB-INF/pages/Base.jsp</result>
+			<result name="error">/WEB-INF/pages/S.jsp</result>
+		</action>
+		<action name="SendPage" class="com.lut.action.SendPageAction">
+			<result name="success">/WEB-INF/pages/Base.jsp</result>
+			<result name="error">/WEB-INF/pages/S.jsp</result>
+		</action>
+		<action name="RejectAction" class="com.lut.action.RejectAction">
+			<result name="ok">/WEB-INF/pages/Role1.jsp</result>
+		</action>
+		<action name="AgreeAction" class="com.lut.action.AgreeAction">
+			<result name="success">/WEB-INF/pages/Role1.jsp</result>
+		</action>
+		<action name="OpeateAction" class="com.lut.action.OpeateAction">
+			<result name="grant">/WEB-INF/pages/grant.jsp</result>
+			<result name="error">/WEB-INF/pages/S.jsp</result>
+		</action>
+		<action name="GrantAction" class="com.lut.action.GrantAction">
+			<result name="success">/WEB-INF/pages/Role0.jsp</result>
+			<result name="error">/WEB-INF/pages/S.jsp</result>
+		</action>
+	</package>
+</struts>

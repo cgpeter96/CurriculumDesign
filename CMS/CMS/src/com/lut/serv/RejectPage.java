@@ -1,0 +1,52 @@
+package com.lut.serv;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.lut.dao.ResDBimpl;
+
+/**
+ * Servlet implementation class RejectPage
+ */
+@WebServlet("/RejectPage")
+public class RejectPage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RejectPage() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String id=request.getParameter("id");
+		ResDBimpl rdb=new ResDBimpl();
+		int i=rdb.setReject(Integer.valueOf(id));
+		if(i<0){
+			PrintWriter pw=response.getWriter();
+			pw.println("³ö´íÁË");
+		}
+		response.sendRedirect("./CMS/Role1.jsp");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
