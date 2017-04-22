@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>demo</servlet-name>
+		<servlet-class>cn.lut.web.DemoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>param</servlet-name>
+		<servlet-class>cn.lut.web.ParamServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>demo</servlet-name>
+		<url-pattern>/demo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>param</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+</web-app>

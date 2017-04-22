@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Sign Up</title>
+<style type="text/css">
+	.Sign{
+		margin-top: 130px;
+
+		background-color: #fff;
+		width: 400px;
+		height: auto;
+		-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+	}
+	body{
+		background-color: #DDDDDD;
+		font-family: '微软雅黑';
+
+	}
+	#round {
+  
+	}	
+	.input-frame{
+		font-size: 18pt;
+		font-family: '微软雅黑';
+		background-color: #BDD7FD;
+		padding:10px; 
+	    width:270px; 
+    	height:40px;
+    	background:#D9E2E2; 
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    	border-radius:10px;
+    	margin-top: 10px;
+    	margin-bottom: 10px;
+	}
+	#sign{
+		font-size: 18pt;
+		font-family: '微软雅黑';
+		width: 120px;
+		height: 40px;
+		-moz-border-radius: 10px;
+	    -webkit-border-radius: 10px;
+	    background-color: #6685FF;
+	    margin-bottom: 40px;
+	    margin-top: 20px;
+	}
+</style>
+<script type="text/javascript">
+	var usr=document.getElementByName('usr');
+	var pwd2;
+	var pwd1
+	function issame() {
+		// body...
+		 pwd1=document.getElementById('pwd1').value;
+		 pwd2=document.getElementById('pwd2').value;
+		if (pwd1!=pwd2){
+			alert('密码不一样，请重新输入');
+		}
+		
+	}
+	function printpwd(){
+		document.write(pwd1+'<br>'+pwd2);
+	
+	}
+</script>
+</head>
+<body >
+<center>
+<form method="post" action="SignDB.java">
+ 	<div class='Sign' >
+ 		<h1 >用户注册</h1>
+ 		<input type="text" name="usr" class='input-frame'
+ 		placeholder="输入用户名" id="usr"><br>
+ 		<input type="password" name="pwd1" class='input-frame'
+ 		placeholder="输入密码" id="pwd1"><br>
+ 		<input type="password" name="pwd2" class='input-frame'
+ 		placeholder="再次输入密码" id="pwd2" onmouseleave="issame()">
+ 		<br>
+ 		<input type="submit" name="signup" value="注册" id="sign"
+ 		>
+ 		
+ 		
+ 	</div>
+ 	</form>
+</center>
+</body>
+</html>
